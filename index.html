@@ -68,6 +68,13 @@
         body.en .lang-es { display: none; }
         body.en .lang-en { display: block; }
 
+        /* Inline language elements (for spans inside flex containers) */
+        span.lang-es, a.lang-es { display: inline; }
+        span.lang-en, a.lang-en { display: none; }
+        
+        body.en span.lang-es, body.en a.lang-es { display: none; }
+        body.en span.lang-en, body.en a.lang-en { display: inline; }
+
         /* Top Bar */
         .top-bar {
             background: var(--color-card);
