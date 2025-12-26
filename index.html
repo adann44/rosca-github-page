@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--
+    ============================================================
+    SETUP INSTRUCTIONS - Replace the placeholders below:
+    ============================================================
+    1. MICROSOFT FORM URL: Search for "PASTE_MICROSOFT_FORM_URL" and replace with your actual Microsoft Form link
+    2. FACEBOOK URL: Search for "PASTE_FACEBOOK_URL" and replace with your Facebook page link
+    3. BUSINESS NAME: Search for "BUSINESS_NAME" and replace with your actual business name
+    4. CITY, STATE: Search for "CITY, STATE" and replace with your pickup location
+    5. PHOTOS: Replace assets/photos/rosca-1.jpg through rosca-8.jpg with your actual images
+    ============================================================
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roscas de Reyes | Authentic Mexican Three Kings Bread</title>
+    <meta name="description" content="Order authentic homemade Roscas de Reyes for Día de Reyes. Traditional and caramel-filled options available. Fresh-baked with love.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Roscas de Reyes | Authentic Mexican Three Kings Bread">
+    <meta property="og:description" content="Order authentic homemade Roscas de Reyes for Día de Reyes. Traditional and caramel-filled options available.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/photos/rosca-1.jpg">
+    
+    <style>
+        /* CSS Reset & Base Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --color-primary: #8B4513;
+            --color-primary-dark: #6B3410;
+            --color-secondary: #D4A574;
+            --color-accent: #C9302C;
+            --color-background: #FDF8F3;
+            --color-card: #FFFFFF;
+            --color-text: #3D3D3D;
+            --color-text-light: #6B6B6B;
+            --color-border: #E8DDD4;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        /* Language Toggle */
+        .lang-es { display: block; }
+        .lang-en { display: none; }
+        
+        body.en .lang-es { display: none; }
+        body.en .lang-en { display: block; }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--color-card);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .logo span {
+            color: var(--color-accent);
+        }
+
+        .lang-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            border: 2px solid var(--color-primary);
+            background: transparent;
+            color: var(--color-primary);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 1.5rem;
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background: #a82824;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--color-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-background);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--color-primary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Menu Section */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .menu-card {
+            background: var(--color-card);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .menu-card h3 {
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .price-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .price-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .price-list li:last-child {
+            border-bottom: none;
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--color-card);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Tradition Section */
+        .tradition-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--color-card);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tradition-content p {
+            margin-bottom: 1rem;
+            color: var(--color-text-light);
+        }
+
+        .tradition-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Ingredients Section */
+        .ingredients {
+            background: var(--color-card);
+        }
+
+        .ingredients-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .ingredients-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .ingredient-tag {
+            background: var(--color-background);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+        }
+
+        .disclaimer {
+            background: #FFF3CD;
+            border: 1px solid #FFECB5;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-md);
+            color: #856404;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        /* How It Works Section */
+        .steps-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            background: var(--color-card);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            flex-grow: 1;
+        }
+
+        .step-content h4 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-info {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .facebook-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #1877F2;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .facebook-btn:hover {
+            background: #0d65d9;
+            transform: translateY(-2px);
+        }
+
+        .location {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-primary-dark);
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .menu-card {
+                padding: 1.5rem;
+            }
+
+            .tradition-content {
+                padding: 1.5rem;
+            }
+
+            .step {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="logo">Roscas de <span>Reyes</span></div>
+        <div class="lang-toggle">
+            <button class="lang-btn" onclick="setLanguage('es')" id="btn-es">ES</button>
+            <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <!-- Spanish -->
+            <div class="lang-es">
+                <h1>Roscas de Reyes Hechas con Amor</h1>
+                <p>Celebra el Día de Reyes con una auténtica rosca artesanal, horneada fresca para tu familia.</p>
+            </div>
+            <!-- English -->
+            <div class="lang-en">
+                <h1>Roscas de Reyes Made with Love</h1>
+                <p>Celebrate Three Kings Day with an authentic artisan rosca, freshly baked for your family.</p>
+            </div>
+            <div class="hero-buttons">
+                <a href="PASTE_MICROSOFT_FORM_URL" target="_blank" class="btn btn-primary lang-es">Ordenar Ahora</a>
+                <a href="PASTE_MICROSOFT_FORM_URL" target="_blank" class="btn btn-primary lang-en">Order Now</a>
+                <a href="#gallery" class="btn btn-secondary lang-es">Ver Fotos</a>
+                <a href="#gallery" class="btn btn-secondary lang-en">View Photos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu & Pricing Section -->
+    <section class="menu">
+        <div class="container">
+            <h2 class="section-title lang-es">Menú y Precios</h2>
+            <h2 class="section-title lang-en">Menu & Pricing</h2>
+            <div class="menu-grid">
+                <!-- Traditional Rosca -->
+                <div class="menu-card">
+                    <h3 class="lang-es">Rosca Tradicional</h3>
+                    <h3 class="lang-en">Traditional Rosca</h3>
+                    <p class="lang-es">Decorada con ate y azúcar, incluye el muñequito tradicional.</p>
+                    <p class="lang-en">Decorated with candied fruit and sugar, includes the traditional baby figurine.</p>
+                    <ul class="price-list">
+                        <li>
+                            <span class="lang-es">Chica</span>
+                            <span class="lang-en">Small</span>
+                            <span class="price">$35</span>
+                        </li>
+                        <li>
+                            <span class="lang-es">Mediana</span>
+                            <span class="lang-en">Medium</span>
+                            <span class="price">$50</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Caramel-Filled Rosca -->
+                <div class="menu-card">
+                    <h3 class="lang-es">Rosca Rellena de Cajeta</h3>
+                    <h3 class="lang-en">Caramel-Filled Rosca</h3>
+                    <p class="lang-es">Nuestra rosca tradicional con un delicioso relleno de cajeta.</p>
+                    <p class="lang-en">Our traditional rosca with a delicious caramel filling.</p>
+                    <ul class="price-list">
+                        <li>
+                            <span class="lang-es">Chica</span>
+                            <span class="lang-en">Small</span>
+                            <span class="price">$35</span>
+                        </li>
+                        <li>
+                            <span class="lang-es">Mediana</span>
+                            <span class="lang-en">Medium</span>
+                            <span class="price">$50</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title lang-es">Galería</h2>
+            <h2 class="section-title lang-en">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/photos/rosca-1.jpg" alt="Rosca de Reyes" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/photos/rosca-2.jpg" alt="Rosca de Reyes" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/photos/rosca-3.jpg" alt="Rosca de Reyes" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/photos/rosca-4.jpg" alt="Rosca de Reyes" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/photos/rosca-5.jpg" alt="Rosca de Reyes" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/photos/rosca-6.jpg" alt="Rosca de Reyes" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/photos/rosca-7.jpg" alt="Rosca de Reyes" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/photos/rosca-8.jpg" alt="Rosca de Reyes" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tradition Section -->
+    <section class="tradition">
+        <div class="container">
+            <h2 class="section-title lang-es">La Tradición</h2>
+            <h2 class="section-title lang-en">The Tradition</h2>
+            <div class="tradition-content">
+                <!-- Spanish -->
+                <div class="lang-es">
+                    <p><strong>El Día de Reyes</strong> se celebra el 6 de enero, conmemorando la llegada de los Tres Reyes Magos —Melchor, Gaspar y Baltazar— quienes trajeron regalos al niño Jesús.</p>
+                    <p>La <strong>Rosca de Reyes</strong> es un pan dulce ovalado que simboliza el amor infinito de Dios. Está adornada con frutas cristalizadas que representan las joyas de las coronas de los reyes.</p>
+                    <p>Dentro de la rosca se esconde un pequeño muñequito que representa al niño Jesús. ¡Quien lo encuentre se convierte en padrino y debe llevar tamales el 2 de febrero, Día de la Candelaria!</p>
+                </div>
+                <!-- English -->
+                <div class="lang-en">
+                    <p><strong>Three Kings Day (Día de Reyes)</strong> is celebrated on January 6th, commemorating the arrival of the Three Wise Men —Melchior, Gaspar, and Balthasar— who brought gifts to baby Jesus.</p>
+                    <p>The <strong>Rosca de Reyes</strong> is an oval-shaped sweet bread that symbolizes God's infinite love. It's decorated with candied fruits representing the jewels from the kings' crowns.</p>
+                    <p>Hidden inside the rosca is a small figurine representing baby Jesus. Whoever finds it becomes the godparent and must bring tamales on February 2nd, Candlemas Day!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients & Allergens Section -->
+    <section class="ingredients">
+        <div class="container">
+            <h2 class="section-title lang-es">Ingredientes y Alérgenos</h2>
+            <h2 class="section-title lang-en">Ingredients & Allergens</h2>
+            <div class="ingredients-content">
+                <!-- Spanish -->
+                <div class="lang-es">
+                    <div class="ingredients-list">
+                        <span class="ingredient-tag">Harina de Trigo</span>
+                        <span class="ingredient-tag">Huevos</span>
+                        <span class="ingredient-tag">Leche</span>
+                        <span class="ingredient-tag">Mantequilla</span>
+                        <span class="ingredient-tag">Azúcar</span>
+                        <span class="ingredient-tag">Levadura</span>
+                        <span class="ingredient-tag">Frutas Cristalizadas</span>
+                        <span class="ingredient-tag">Cajeta (rellena)</span>
+                    </div>
+                    <div class="disclaimer">
+                        ⚠️ <strong>Aviso:</strong> Contiene gluten, lácteos y huevo. Elaborado en una cocina casera donde se procesan estos alérgenos.
+                    </div>
+                </div>
+                <!-- English -->
+                <div class="lang-en">
+                    <div class="ingredients-list">
+                        <span class="ingredient-tag">Wheat Flour</span>
+                        <span class="ingredient-tag">Eggs</span>
+                        <span class="ingredient-tag">Milk</span>
+                        <span class="ingredient-tag">Butter</span>
+                        <span class="ingredient-tag">Sugar</span>
+                        <span class="ingredient-tag">Yeast</span>
+                        <span class="ingredient-tag">Candied Fruit</span>
+                        <span class="ingredient-tag">Cajeta (filled)</span>
+                    </div>
+                    <div class="disclaimer">
+                        ⚠️ <strong>Notice:</strong> Contains gluten, dairy, and eggs. Made in a home kitchen where these allergens are processed.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How Ordering Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title lang-es">¿Cómo Ordenar?</h2>
+            <h2 class="section-title lang-en">How to Order</h2>
+            <div class="steps-container">
+                <!-- Spanish Steps -->
+                <div class="lang-es">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Completa el Formulario</h4>
+                            <p>Haz clic en "Ordenar Ahora" y llena el formulario con tu pedido.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Confirmación</h4>
+                            <p>Te contactaremos para confirmar tu pedido y coordinar los detalles.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Pago</h4>
+                            <p>Aceptamos efectivo, Zelle o Venmo. El pago se realiza al recoger.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Recoge tu Rosca</h4>
+                            <p>Te avisaremos cuando esté lista para recoger. ¡Fresca del horno!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- English Steps -->
+                <div class="lang-en">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Fill Out the Form</h4>
+                            <p>Click "Order Now" and complete the form with your order details.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Confirmation</h4>
+                            <p>We'll contact you to confirm your order and coordinate the details.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Payment</h4>
+                            <p>We accept cash, Zelle, or Venmo. Payment is collected at pickup.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Pick Up Your Rosca</h4>
+                            <p>We'll notify you when it's ready for pickup. Fresh from the oven!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title lang-es">Contáctanos</h2>
+            <h2 class="section-title lang-en">Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <a href="PASTE_FACEBOOK_URL" class="facebook-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <span class="lang-es">Síguenos en Facebook</span>
+                        <span class="lang-en">Follow us on Facebook</span>
+                    </a>
+                </div>
+                <p class="location">
+                    <span class="lang-es">📍 Recoge en: CITY, STATE</span>
+                    <span class="lang-en">📍 Pickup in: CITY, STATE</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 BUSINESS_NAME. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span></p>
+    </footer>
+
+    <!-- Language Toggle Script -->
+    <script>
+        function setLanguage(lang) {
+            const body = document.body;
+            const btnEs = document.getElementById('btn-es');
+            const btnEn = document.getElementById('btn-en');
+            
+            if (lang === 'en') {
+                body.classList.add('en');
+                btnEn.classList.add('active');
+                btnEs.classList.remove('active');
+                document.documentElement.lang = 'en';
+            } else {
+                body.classList.remove('en');
+                btnEs.classList.add('active');
+                btnEn.classList.remove('active');
+                document.documentElement.lang = 'es';
+            }
+            
+            // Save preference
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLang') || 'es';
+            setLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>
